@@ -35,6 +35,29 @@ variable "sftp_user_map" {
   }
 }
 
+#account details
+variable "region" {
+  type        = string
+  description = "default aws region"
+} 
+
+variable "access_key" {
+  type        = string
+  description = "aws access key for aws provider"
+}
+
+variable "secret_key" {
+  type        = string
+  description = "aws secret key for aws provider"
+}
+
+/* variable "aws_tags" {
+  description = "Tagging for ownership and cost information."
+  type        = map(any)
+  default = null
+
+} */
+
 
 #learn work terraform workspaces here - https://www.terraform.io/docs/state/workspaces.html
 # command to initilize environment specific workspace ( dev, qa, prd)
@@ -51,7 +74,7 @@ locals {
   sftp_bucket_name = "${var.sftp_bucket_name_map[local.workspace_env]}"
   sftp_user        = "${var.sftp_user_map[local.workspace_env]}"
 
-}
+} 
 
 
 variable "owner_name" {
