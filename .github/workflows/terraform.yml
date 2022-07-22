@@ -77,6 +77,6 @@ jobs:
         run: exit 1
 
       # Terraform apply on push to main branch
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+      #- name: Terraform Apply
+      #  if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #  run: terraform apply -auto-approve
